@@ -17,7 +17,7 @@ def extract_text_from_pdf(pdf_path):
         print(f"An unexpected error occurred: {e}")
     return text
 
-pdf_path = r"C:\Users\Niran\OneDrive\Desktop 1\py\B.Tech-II-year-CSE-R20-syllabus-1-1.pdf"
+pdf_path = r"C:\Users\Niran\OneDrive\Desktop 1\py\minimizedpdf.pdf"
 
 text = extract_text_from_pdf(pdf_path)
 print(text)
