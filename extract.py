@@ -1,4 +1,8 @@
 import PyPDF2
+import spacy
+
+# Load the pre-trained SpaCy model
+nlp = spacy.load("en_core_web_sm")
 
 def extract_text_from_pdf(pdf_path):
     text = ""
@@ -17,7 +21,22 @@ def extract_text_from_pdf(pdf_path):
         print(f"An unexpected error occurred: {e}")
     return text
 
+def classify_text(text):
+    # Process the text with SpaCy
+    doc = nlp(text)
+    
+    # Extract and classify entities
+    entities = [(ent.text, ent.label_) for ent in doc.ents]
+    
+    return entities
+
 pdf_path = r"C:\Users\Niran\OneDrive\Desktop 1\py\minimizedpdf.pdf"
 
 text = extract_text_from_pdf(pdf_path)
-print(text)
+print("Extracted Text:\n", text)
+
+# Classify the extracted text
+entities = classify_text(text)
+print("\nClassified Entities:")
+for entity in entities:
+    print(f"Entity: {entity[0]}, Label: {entity[1]}")
