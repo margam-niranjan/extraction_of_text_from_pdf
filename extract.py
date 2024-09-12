@@ -30,7 +30,7 @@ def classify_text(text):
     
     return entities
 
-pdf_path = r"C:\Users\Niran\OneDrive\Desktop 1\py\minimizedpdf.pdf"
+pdf_path = r"C:\Users\Niran\OneDrive\Desktop 1\py\sample.pdf"
 
 text = extract_text_from_pdf(pdf_path)
 print("Extracted Text:\n", text)
